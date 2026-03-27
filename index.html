@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Exposure Triangle</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero__content">
+      <h1 class="hero__title">The Exposure Triangle</h1>
+      <p class="hero__subtitle">ISO. Aperture. Shutter Speed. Three settings, one perfect exposure.</p>
+      <p class="hero__byline">A visual guide by Seth Melchor</p>
+    </div>
+  </section>
+
+  <!-- Main: Simulator + Gallery -->
+  <main class="workspace">
+    <!-- Left: Simulator -->
+    <div class="workspace__simulator">
+      <div class="simulator__readout">
+        <p id="readout-ev" class="readout__ev">Exposure: 0.0 EV</p>
+        <p id="readout-status" class="readout__status readout__status--good">Well exposed — nice balance!</p>
+      </div>
+
+      <div class="simulator__preview-wrapper">
+        <img id="sim-preview" class="simulator__preview-img" src="images/hero.jpg" alt="Simulated exposure preview">
+        <div id="sim-noise" class="simulator__noise-overlay"></div>
+        <span id="sim-dof" class="simulator__dof-indicator">Moderate DOF</span>
+      </div>
+
+      <!-- Presets -->
+      <div class="presets">
+        <button class="preset" data-iso="3" data-aperture="2" data-shutter="1">Freeze Action</button>
+        <button class="preset" data-iso="0" data-aperture="6" data-shutter="6">Sharp Landscape</button>
+        <button class="preset" data-iso="0" data-aperture="0" data-shutter="5">Blurry Background</button>
+        <button class="preset" data-iso="5" data-aperture="0" data-shutter="5">Night / Concert</button>
+        <button class="preset" data-iso="6" data-aperture="0" data-shutter="12">Blown Out</button>
+        <button class="preset" data-iso="0" data-aperture="8" data-shutter="0">Too Dark</button>
+      </div>
+
+      <div class="simulator__controls">
+        <div class="control-group">
+          <label>
+            ISO
+            <span id="iso-value" class="control-group__value">100</span>
+          </label>
+          <input type="range" id="iso" min="0" max="6" step="1" value="0">
+        </div>
+
+        <div class="control-group">
+          <label>
+            Aperture
+            <span id="aperture-value" class="control-group__value">f/5.6</span>
+          </label>
+          <input type="range" id="aperture" min="0" max="8" step="1" value="4">
+        </div>
+
+        <div class="control-group">
+          <label>
+            Shutter Speed
+            <span id="shutter-value" class="control-group__value">1/125</span>
+          </label>
+          <input type="range" id="shutter" min="0" max="12" step="1" value="5">
+        </div>
+      </div>
+    </div>
+
+    <!-- Divider -->
+    <div class="workspace__divider"></div>
+
+    <!-- Right: Gallery -->
+    <div class="workspace__gallery">
+      <h2 class="gallery__heading">Gallery</h2>
+      <p class="gallery__hint">Click a photo to load it into the simulator</p>
+      <div class="gallery__grid">
+        <button class="gallery__item gallery__item--active" data-src="images/hero.jpg">
+          <img src="images/hero.jpg" alt="Hero photo">
+        </button>
+        <button class="gallery__item" data-src="images/iso-low.jpg">
+          <img src="images/iso-low.jpg" alt="Low ISO example">
+          <span class="gallery__label">ISO 100</span>
+        </button>
+        <button class="gallery__item" data-src="images/iso-high.jpg">
+          <img src="images/iso-high.jpg" alt="High ISO example">
+          <span class="gallery__label">ISO 6400</span>
+        </button>
+        <button class="gallery__item" data-src="images/aperture-wide.jpg">
+          <img src="images/aperture-wide.jpg" alt="Wide aperture">
+          <span class="gallery__label">f/1.4</span>
+        </button>
+        <button class="gallery__item" data-src="images/aperture-narrow.jpg">
+          <img src="images/aperture-narrow.jpg" alt="Narrow aperture">
+          <span class="gallery__label">f/16</span>
+        </button>
+        <button class="gallery__item" data-src="images/shutter-fast.jpg">
+          <img src="images/shutter-fast.jpg" alt="Fast shutter">
+          <span class="gallery__label">1/2000s</span>
+        </button>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>The Exposure Triangle &mdash; Seth Melchor</p>
+  </footer>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
